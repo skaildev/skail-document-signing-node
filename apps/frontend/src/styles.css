@@ -1,0 +1,177 @@
+:root {
+  color-scheme: light dark;
+  --accent: #2563eb;
+  --muted: #6b7280;
+  --ok: #16a34a;
+  --bad: #dc2626;
+  --warn: #d97706;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font:
+    16px/1.5 system-ui,
+    sans-serif;
+  background: Canvas;
+  color: CanvasText;
+}
+main {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+h1 {
+  margin: 0;
+}
+h2 {
+  font-size: 1rem;
+  margin: 2rem 0 0.5rem;
+}
+.subtitle {
+  color: var(--muted);
+  margin-top: 0.25rem;
+}
+.controls {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin: 1.5rem 0 1rem;
+}
+.controls input {
+  flex: 1;
+}
+input,
+button {
+  font: inherit;
+  padding: 0.5rem 0.9rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--muted);
+}
+input {
+  width: 100%;
+}
+button {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  min-width: 7rem;
+}
+button.refuse {
+  background: var(--bad);
+  border-color: var(--bad);
+}
+button:disabled,
+input:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.status {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  color: var(--muted);
+}
+.badge {
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  background: var(--muted);
+  color: #fff;
+  font-size: 0.85rem;
+}
+.badge.active {
+  background: var(--accent);
+}
+.badge.done {
+  background: var(--ok);
+}
+.badge.failed {
+  background: var(--bad);
+}
+.error {
+  color: var(--bad);
+}
+.result {
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid currentColor;
+}
+.result.done {
+  color: var(--ok);
+}
+.result.failed {
+  color: var(--bad);
+}
+.areas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+.area {
+  padding: 1rem;
+  border: 1px solid color-mix(in srgb, CanvasText 20%, transparent);
+  border-radius: 0.75rem;
+}
+.area h2 {
+  margin-top: 0;
+}
+.area label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 0.5rem;
+}
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+.meta {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.pill {
+  padding: 0.05rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  color: #fff;
+  background: var(--muted);
+}
+.pill.Signed {
+  background: var(--ok);
+}
+.pill.Refused,
+.pill.Revoked {
+  background: var(--bad);
+}
+.pill.Withdrawn {
+  background: var(--warn);
+}
+.timeline {
+  padding-left: 1.2rem;
+}
+.timeline time {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  margin-right: 0.5rem;
+}
+footer {
+  margin-top: 2rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+@media (max-width: 760px) {
+  .areas {
+    grid-template-columns: 1fr;
+  }
+}
+a {
+  color: var(--accent);
+}
+.countdown {
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
